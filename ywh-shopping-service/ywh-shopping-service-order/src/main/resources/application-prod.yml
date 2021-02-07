@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/ywh-shopping-order?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: ywh169747
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7000/eureka
+
+security:
+  oauth2:
+    client:
+      client-id: ywh-shopping-sys-client
+      client-secret: ywh169747
+      access-token-uri: http://127.0.0.1:9000/oauth/token
+      user-authorization-uri: http://127.0.0.1:9000/oauth/authorize
+    resource:
+      token-info-uri: http://127.0.0.1:9000/oauth/check_token

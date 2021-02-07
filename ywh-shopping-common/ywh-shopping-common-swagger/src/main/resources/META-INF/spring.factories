@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.ywh.shoppingcommonswagger.config.SwaggerAutoConfiguration,\
+  com.ywh.shoppingcommonswagger.config.gateway.GatewaySwaggerAutoConfiguration

@@ -1,0 +1,21 @@
+{"properties": [
+  {
+    "name": "swagger.gateway.enabled",
+    "type": "java.lang.Boolean",
+    "description": "是否开启网关聚合swagger"
+  }
+],"hints": [
+  {
+    "name": "swagger.gateway.enabled",
+    "values": [
+      {
+        "value": "true",
+        "description": "open gateway swagger."
+      },
+      {
+        "value": "false",
+        "description": "close gateway swagger."
+      }
+    ]
+  }
+]}

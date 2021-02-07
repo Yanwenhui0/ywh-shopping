@@ -1,0 +1,39 @@
+server:
+  port: 18000
+  servlet:
+    context-path: /service-goods
+spring:
+  application:
+    name: service-goods
+
+  datasource:
+    hikari:
+      minimum-idle: 5
+      idle-timeout: 600000
+      maximum-pool-size: 10
+      auto-commit: true
+      pool-name: MyHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapperxml/*.xml
+  type-aliases-package: com.ywh.shoppingservicegoodsapi.pojo
+
+eureka:
+  # 使用 ip 注册
+  instance:
+    prefer-ip-address: true
+
+swagger:
+  enabled: true
+  title: shopping-service-goods
+  description: 商品服务
+  version: 1.0.0
+  base-package: com.ywh.shoppingservicegoods.controller
+
+info:
+  app:
+    name: service-goods
+

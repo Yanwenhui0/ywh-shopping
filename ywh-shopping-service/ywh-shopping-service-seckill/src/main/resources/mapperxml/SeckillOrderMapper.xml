@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ywh.shoppingserviceseckill.mapper.SeckillOrderMapper">
+  <resultMap id="BaseResultMap" type="com.ywh.shoppingserviceseckillapi.pojo.SeckillOrder">
+    <!--@mbg.generated-->
+    <!--@Table tb_seckill_order-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="seckill_id" jdbcType="BIGINT" property="seckillId" />
+    <result column="money" jdbcType="DECIMAL" property="money" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="seller_id" jdbcType="VARCHAR" property="sellerId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="pay_time" jdbcType="TIMESTAMP" property="payTime" />
+    <result column="status" jdbcType="CHAR" property="status" />
+    <result column="receiver_address" jdbcType="VARCHAR" property="receiverAddress" />
+    <result column="receiver_mobile" jdbcType="VARCHAR" property="receiverMobile" />
+    <result column="receiver" jdbcType="VARCHAR" property="receiver" />
+    <result column="transaction_id" jdbcType="VARCHAR" property="transactionId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, seckill_id, money, user_id, seller_id, create_time, pay_time, `status`, receiver_address,
+    receiver_mobile, receiver, transaction_id
+  </sql>
+</mapper>

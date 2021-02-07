@@ -1,0 +1,30 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: oauth
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: jdbc:mysql://127.0.0.1:3306/ywh-shopping-user?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: ywh169747
+    hikari:
+      minimum-idle: 5
+      idle-timeout: 600000
+      maximum-pool-size: 10
+      auto-commit: true
+      pool-name: MyHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapperxml/*.xml
+  type-aliases-package: com.ywh.shoppingoauth.pojo
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7000/eureka
+  instance:
+    prefer-ip-address: true
