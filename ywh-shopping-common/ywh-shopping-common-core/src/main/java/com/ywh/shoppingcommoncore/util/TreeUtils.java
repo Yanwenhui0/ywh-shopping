@@ -3,6 +3,7 @@ package com.ywh.shoppingcommoncore.util;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.ywh.shoppingcommoncore.dto.TreeNode;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 import java.util.Map;
@@ -24,14 +25,16 @@ public class TreeUtils {
      */
     public static  <P, T extends TreeNode<P, T>> List<T> buildTree(List<T> dataList) {
         Map<P, List<T>> dataByParentIdMap = Maps.newHashMapWithExpectedSize(dataList.size());
-        dataList.forEach(category -> {
-            List<T> children = dataByParentIdMap.getOrDefault(category.getParentId(), Lists.newArrayList());
-            children.add(category);
-            dataByParentIdMap.put(category.getParentId(), children);
+        dataList.forEach(data -> {
+            List<T> children = dataByParentIdMap.getOrDefault(data.getParentId(), Lists.newArrayList());
+            children.add(data);
+            dataByParentIdMap.put(data.getParentId(), children);
         });
-        dataList.forEach(category-> category.setChildren(dataByParentIdMap.get(category.getId())));
+        dataList.forEach(data-> data.setChildren(dataByParentIdMap.get(data.getId())));
         return dataList.stream()
-                .filter(category -> category.getParentId().equals(0))
+                .filter(data -> null == data.getParentId()
+                        || StringUtils.isBlank(data.getParentId().toString())
+                        || StringUtils.equals(data.getParentId().toString(), "0"))
                 .collect(Collectors.toList());
     }
 
